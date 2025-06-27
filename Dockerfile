@@ -1,5 +1,7 @@
 FROM openjdk:8
-ADD jarstaging/com/stalin/demo-workshop/2.0.1/demo-workshop-2.0.1.jar demo-workshop.jar
+
+# Copy the built JAR into the container
+COPY target/demo-workshop-2.0.1.jar demo-workshop.jar
+
+# Set the default command
 ENTRYPOINT ["java", "-jar", "demo-workshop.jar"]
-
-
